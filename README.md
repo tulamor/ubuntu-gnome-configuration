@@ -46,3 +46,15 @@ auto wlan0
 iface wlan0 inet dhcp
 
 sudo ifdown wlan0 && sudo ifup -v wlan0  # <-- restart the interface
+
+### Disable telemetry
+ubuntu-report -f send no
+sudo apt-get autoremove ubuntu-report popularity-contest
+sudo apt-get autoremove unity-lens-shopping
+APP LAUNCHER > PRIVACY > Disable Diagnostics send error reports / Location / Problem reporting / Connectivity checking
+
+### Enable firewall
+sudo ufw enable
+sudo ufw status verbose
+sudo ufw status numbered
+```
