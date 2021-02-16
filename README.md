@@ -1,5 +1,7 @@
 # Ubuntu: 20.04 LTS / GNOME 3.36
 
+sudo apt-get update; sudo apt-get upgrade
+
 ## Wi-Fi troubleshooting
 
 ### Install drivers from ISO  
@@ -46,15 +48,60 @@ auto wlan0
 iface wlan0 inet dhcp
 
 sudo ifdown wlan0 && sudo ifup -v wlan0  # <-- restart the interface
+```
 
 ### Disable telemetry
+```bash
 ubuntu-report -f send no
 sudo apt-get autoremove ubuntu-report popularity-contest
 sudo apt-get autoremove unity-lens-shopping
-APP LAUNCHER > PRIVACY > Disable Diagnostics send error reports / Location / Problem reporting / Connectivity checking
-
+```
 ### Enable firewall
+```bash
 sudo ufw enable
 sudo ufw status verbose
 sudo ufw status numbered
 ```
+
+## Applications to install
+```
+vlc
+trash-cli  # Add alias rm=trash to your .zshrc/.bashrc to reduce typing & safely trash files
+neofetch   # CLI tool to display sysinfo
+htop
+gparted    # Graphical tool for managing disks on Linux
+ubuntu-restricted-extras # Media codecs to support non-free formats
+timeshift  # System restore utility
+preload    # Cashes most used apps (quick start for most used apps)
+gnome-tweaks
+synaptic   # GTK-based graphical user interface for the APT package manager
+jitsi      # Collection of voice, video conferencing and messaging applications for the web platform
+use custom DNS (inside connection settings add custom DNS google / cloudflare)
+App Launcher > Privacy > Disable Diagnostics send error reports / Location / Problem reporting / Connectivity checking
+
+
+firefox settings:
+about:config
+layers.acceleration.force-enabled > True # enables hardware acceleration
+gfx.webrender.all > True
+```
+
+##  Applications to try
+```
+chromium
+brave
+libre office
+gimp
+stacer  # system monitoring / cleaning cache
+BleachBit
+notepadqq
+vimtutor
+kdenlive
+simplenote
+gnome tweaks # gnome costumization
+pdfsam  # manipulate PDF
+gnome-shell-extensions # browse extensions.gnome.org
+```
+## Shortcut keys
+`Super + NUM (NUM is the index of application which is pinned to "favorites")`
+
